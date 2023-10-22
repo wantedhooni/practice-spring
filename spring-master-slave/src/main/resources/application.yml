@@ -1,0 +1,17 @@
+
+spring:
+  datasource:
+    master:
+      hikari:
+        #driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+        driver-class-name: org.mariadb.jdbc.Driver
+        jdbc-url: jdbc:mariadb://localhost:13306/test_db?characterEncoding=UTF-8
+        username: root
+        password: 1234
+    slave:
+      hikari:
+        #driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+        driver-class-name: org.mariadb.jdbc.Driver
+        jdbc-url: jdbc:mariadb://localhost:23306/test_db?characterEncoding=UTF-8
+        username: root
+        password: 1234
