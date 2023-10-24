@@ -1,6 +1,7 @@
 package com.revy.springjwt.domain;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -30,4 +31,14 @@ public class RefreshToken {
     private Instant expiryDate;
 
     public boolean revoked;
+
+
+    @Builder
+    public RefreshToken(Long id, User user, String token, Instant expiryDate, boolean revoked) {
+        this.id = id;
+        this.user = user;
+        this.token = token;
+        this.expiryDate = expiryDate;
+        this.revoked = revoked;
+    }
 }
