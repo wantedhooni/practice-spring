@@ -9,4 +9,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class RefreshTokenParamDto {
     private String refreshToken;
+
+    public RefreshTokenParamDto(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
 }
