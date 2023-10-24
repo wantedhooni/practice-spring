@@ -1,5 +1,8 @@
 package com.revy.springjwt.infra.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.revy.springjwt.domain.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -41,5 +44,13 @@ public class AppConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public ObjectMapper objectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule()); // 타임 모듈 변경
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS,false); // 타임스탬프 변경
+        return objectMapper;
     }
 }
