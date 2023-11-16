@@ -1,13 +1,13 @@
-package com.revy.springetc;
+package com.revy.springredisson;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringEtcApplicationTests {
+class SpringRedissonApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
