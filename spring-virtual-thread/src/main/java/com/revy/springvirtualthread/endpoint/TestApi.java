@@ -23,7 +23,7 @@ public class TestApi {
     @GetMapping("/virtual")
     public String test() throws InterruptedException {
         String threadName = Thread.currentThread().getName();
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         log.info("threadName: {}", Thread.currentThread().getName());
         return threadName;
     }
